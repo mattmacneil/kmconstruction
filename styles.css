@@ -126,3 +126,24 @@ img{max-width:100%;display:block}
   .footer-grid{grid-template-columns: 1fr auto}
   .footer-grid .right{text-align:right}
 }
+
+/* Added 9/9/25 */
+
+a[href^="tel"], .header-phone, .hero-phone {
+  color: inherit !important;
+  text-decoration: none !important;
+  -webkit-touch-callout: none;
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .header-cta {
+    align-items: center;
+  }
+}
