@@ -1,0 +1,128 @@
+/* K & M Construction — Static Site Styles */
+:root{
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --muted: #475569;
+  --panel: #ffffff;
+  --panel-2: #f1f5f9;
+  --accent: #f59e0b; /* amber */
+  --dark: #0b1220;
+  --dark-2: rgba(11,18,32,.9);
+  --ring: rgba(245, 158, 11, 0.35);
+  --shadow: 0 10px 30px rgba(2,8,23,.15);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img{max-width:100%;display:block}
+.container{width:min(1200px, 92%);margin-inline:auto}
+
+.site-header{
+  position: sticky; top:0; z-index: 1000;
+  background: rgba(11,18,32,.9);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  backdrop-filter: saturate(140%) blur(8px);
+  color:#fff;
+  box-shadow: 0 6px 20px rgba(2,8,23,.25);
+}
+.header-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+.brand{display:flex; align-items:center; gap:12px}
+.brand-mark{height:40px; width:40px; display:grid; place-items:center; background:rgba(255,255,255,.08); border-radius:12px; font-size:20px}
+.brand-name{font-weight:800; letter-spacing:.2px; font-size:20px}
+.header-cta{display:flex; flex-direction:column; align-items:flex-end; gap:8px}
+.header-phone{font-size:18px; text-shadow: 0 1px 0 rgba(0,0,0,.2); color: var(--accent)}
+
+.financing-badge{
+  font-weight:800; font-size:13px; color: #b45309;
+  background: #fef3c7; padding:6px 10px; border-radius:10px;
+  box-shadow: 0 4px 12px rgba(180, 83, 9, .25);
+  display:inline-flex; align-items:center; gap:6px;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{ transform: translateZ(0) scale(1); box-shadow: 0 0 0 0 var(--ring) }
+  50%{ transform: translateZ(0) scale(1.03); box-shadow: 0 0 0 6px rgba(245, 158, 11, 0) }
+}
+
+.btn{display:inline-block; border:0; border-radius:12px; padding:10px 16px; font-weight:700; cursor:pointer; text-decoration:none; transition: all .18s ease}
+.btn-amber{background:var(--accent); color:#111827; box-shadow: var(--shadow)}
+.btn-amber:hover{filter: saturate(105%) brightness(1.03); transform: translateY(-1px)}
+.btn-lg{padding:14px 22px; font-size:16px}
+.btn-block{width:100%}
+
+.hero{
+  position:relative; min-height:520px;
+  background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop');
+  background-size:cover; background-position:center;
+}
+.hero-overlay{
+  position:absolute; inset:0; background:linear-gradient(180deg, rgba(2,8,23,.65), rgba(2,8,23,.65));
+}
+.hero-inner{position:relative; display:flex; align-items:center; min-height:520px; padding:48px 0}
+.hero-copy{max-width:720px; color:#fff}
+.hero h1{font-size:clamp(32px, 4vw, 52px); line-height:1.15; margin:0}
+.hero p{margin:14px 0 0; font-size:18px; color:rgba(255,255,255,.92)}
+.hero-actions{margin-top:24px; display:flex; flex-direction:column; align-items:flex-start; gap:10px}
+.hero-phone{color: var(--accent); font-size:20px; text-shadow: 0 1px 0 rgba(0,0,0,.2)}
+
+.badges{background:#fff; border-block:1px solid #e5e7eb}
+.badges-grid{display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:14px; padding:18px 0}
+.badge{background:#f8fafc; border-radius:14px; padding:12px; text-align:center; font-weight:600}
+
+.section{padding:64px 0}
+.section-muted{background:#f1f5f9}
+.section-inverse{background:#0b1220; color:#fff}
+.section-title{text-align:center; font-size:28px; margin:0}
+.section-lead{text-align:center; margin-top:6px; color:var(--muted)}
+
+.cards-grid{margin-top:28px; display:grid; grid-template-columns: 1fr; gap:16px}
+.card{background:#fff; border-radius:18px; padding:22px; box-shadow: var(--shadow); transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform: translateY(-2px); box-shadow: 0 14px 40px rgba(2,8,23,.18)}
+.card-icon{font-size:28px}
+.card-title{margin:10px 0 6px; font-size:20px}
+.card-text{color:var(--muted); margin:0}
+
+.projects-stack{margin-top:28px; display:flex; flex-direction:column; align-items:center; gap:28px}
+.project{background:#fff; border-radius:18px; overflow:hidden; box-shadow: var(--shadow); max-width:720px; width:100%}
+.project img{height:260px; width:100%; object-fit:cover; transition: transform .25s ease}
+.project:hover img{transform: scale(1.03)}
+.project figcaption{padding:10px 14px; color:var(--muted); text-align:center; font-size:14px}
+
+.about-grid{display:grid; grid-template-columns: 1fr; gap:24px; align-items:center}
+.about-image{border-radius:18px; box-shadow: var(--shadow); height:280px; object-fit:cover; width:100%}
+.section-text{color:var(--muted)}
+.list{margin:14px 0 0; padding-left:18px}
+.list li{margin:6px 0}
+
+.testimonials .quote p{margin:0 0 8px 0; font-style:italic}
+.testimonials .quote footer{color:var(--muted); font-weight:600}
+
+.contact-form{margin-top:22px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:18px; padding:24px; box-shadow: 0 10px 30px rgba(0,0,0,.2)}
+.form-grid{display:grid; grid-template-columns: 1fr; gap:14px}
+.form-grid .span-2{grid-column: 1 / -1}
+.contact-form input, .contact-form textarea{
+  width:100%; border:0; border-radius:12px; padding:12px 14px; background:#fff; color:#0f172a; font: inherit;
+  outline: none; box-shadow: inset 0 0 0 1px transparent; transition: box-shadow .15s ease, transform .03s ease;
+}
+.contact-form input:focus, .contact-form textarea:focus{ box-shadow: inset 0 0 0 2px var(--accent) }
+
+.site-footer{background:#0b1220; color:#fff; padding:24px 0}
+.footer-grid{display:grid; grid-template-columns: 1fr; gap:10px; align-items:center}
+.footer-grid .subtle{color: rgba(255,255,255,.75)}
+.footer-grid .right{text-align:left}
+
+@media (min-width: 700px){
+  .cards-grid{grid-template-columns: repeat(3, minmax(0,1fr))}
+  .badges-grid{grid-template-columns: repeat(4, minmax(0,1fr))}
+  .about-grid{grid-template-columns: 1.1fr 1fr}
+  .form-grid{grid-template-columns: repeat(2, minmax(0,1fr))}
+  .footer-grid{grid-template-columns: 1fr auto}
+  .footer-grid .right{text-align:right}
+}
